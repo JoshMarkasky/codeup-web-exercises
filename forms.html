@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- meta tags -->
+        <meta charset="UTF-8">
+        <meta name="description" content="Practice project for code up">
+        <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+        <meta name="author" content="Josh Markaksy">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Title -->
+        <title>Register With Us</title>
+
+    </head>
+    <body>
+        <h1>Register With Us</h1>
+
+        <form method="Get" action="https://request-inspector.glitch.me/" >
+            <label for="email">Email:</label>
+            <input name="email" type="text" id="email" placeholder="Enter Email">
+            <label for="password">Password:</label>
+            <input name="password" type="Password" id="password" placeholder="Enter Password"><br><br>
+
+            <label for="bio">bio</label>
+            <textarea name="Bio" id="bio"></textarea>
+
+            <h2>How did you hear about us?</h2>
+            <input type="radio" name="About" value="billboard" id="billboard">
+            <label for="billboard">billboard</label><br>
+            <input type="radio" name="About" value="radio advertisement" id="radio advertisement">
+            <label for="radio advertisement">radio advertisement</label><br>
+            <input type="radio" name="About" value="internet advertisement" id="internet advertisement">
+            <label for="internet advertisement">internet advertisement</label><br>
+            <input type="radio" name="About1" value="other" id="other">
+            <label for="other">other</label><br><br><br>
+
+            <!-- If radio inputs have different names attributes then you will be able to select multiple at once -->
+
+            <label for="browser">What browser are you using?</label>
+            <select name="browser" id="browser">
+                <option value="google_chrome">Google Chrome</option>
+                <option value="mozilla firefox">mozilla firefox</option>
+                <option value="Microsoft Edge">Microsoft Edge</option>
+            </select>
+
+            <br><br>
+            <button type="submit">Submit</button>
+
+            <!--
+                when changing the form's request method from GET to POST, Get receives Query Strings, while
+                Post does not.
+
+                When removing name attribute, it does not show in Query string at all
+
+                When removing Id, name still shows in Query string but shows its equal to no value.
+
+            -->
+        </form>
+    </body>
+</html>

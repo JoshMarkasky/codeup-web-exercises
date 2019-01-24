@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Meta Tags -->
+        <meta charset="UTF-8">
+        <meta name="description" content="Practice project for code up">
+        <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+        <meta name="author" content="Josh Markaksy">
+
+        <!-- Title -->
+        <title>Bonus form</title>
+
+    </head>
+    <body>
+        <div class="container">
+            <form>
+                <h1>Ordering Pizza</h1>
+                <label for="size">Size</label>
+
+                <!-- Size choice -->
+                <select id="size">
+                    <option value="Small">Small</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Large">Large</option>
+                </select>
+
+                <!--  topping choice -->
+                <input type="radio" name="topping1" id="Pepperoni">
+                <label for="Pepperoni">Pepperoni</label><br>
+                <input type="radio" name="topping2" id="sausage">
+                <label for="sausage">sausage</label>
+                <input type="radio" name="topping3" id="bacon">
+                <label for="bacon">bacon</label><br>
+
+                <!-- adding extra -->
+                <input type="checkbox" name="cheese" id="cheese">
+                <label for="cheese">extra cheese</label><br>
+
+                <!-- Checkbox for sign up -->
+                <input id="signup" type="checkbox" value="true" checked>Sign Up For The Email Newsletter?
+                <label for="signup">sign up:</label><br>
+
+                <!-- Hidden cost to charge extra -->
+                <input type="hidden" name="money" value="$20"><br>
+
+                <!-- Sign in -->
+                <h2>sign in</h2>
+
+                <label for="email">email:</label>
+                <input type="text" id="email" name="email" placeholder="enter your email"><br><br>
+                <label for="password">password</label>
+                <input type="password" id="password" name="password" placeholder="enter your password"><br><br><br>
+
+                <!-- instructions for driver -->
+                <label for="driver">instructions for driver</label>
+                <textarea name="instructions" id="driver"></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div> <!-- End of wrapper -->
+    </body>
+</html>
