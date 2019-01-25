@@ -1,4 +1,67 @@
+/* ----------------------   tags CSS ---------------------*/
+/* Heading tag */
+h1, h2{
+    color: green;
+    text-decoration: underline;
+}
+
+/* body tag */
+body{
+    background-color: blue;
+    font-family: 'Roboto', sans-serif;
+    background-image: url("../img/random1.jpeg");
+    /*  background-repeat: no-repeat; */
+}
+
+/* List tags */
+li{
+    list-style: square;
+}
+
+/* table CSS */
+td{
+    padding: 5px;
+    font-size: 30px;
+}
+
+tr {
+    padding: 5px;
+    font-size: 50px;
+}
+
+/* anchor tags */
+a{
+    color: black;
+}
+
+a:hover{
+    color:purple;
+    font-size: 50px;
+}
+
+/* a:visited{
+    color: gold;
+    font-size: 10px;
+} */
+
+a:active{
+    color: navy;
+    font-size: 100px;
+}
+
+/* a:link{
+    color: red;
+    font-size: 100px;
+} */
+/* ---------------------  classes CSS --------------------*/
 .fancy-header {
     color: purple; /* single line comment */
     text-decoration: underline;
 }
+
+.container-header{
+    text-align: center;
+}
+
+/* ----------------------    id CSS ------------------*/
+
