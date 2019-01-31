@@ -1,0 +1,126 @@
+/* Moblie CSS */
+.alert-info, h1, .nav-links {
+    text-align: center;
+    font-family: arial;
+}
+
+.alert-info>a {
+    text-decoration: none;
+}
+
+img {
+    margin-left: 3%;
+    width: 95%;
+}
+
+li {
+    list-style: none;
+    padding: 3%;
+    background-color: lightgrey;
+    margin: 3%;
+}
+
+ul.nav-links {
+    padding-left: 0;
+}
+
+.alert-info {
+    background-color: lightblue;
+    padding: 3%;
+    border: 2px solid gray;
+    margin: 3%;
+}
+
+body>div:first-child a {
+    color: #000;
+}
+
+h1 {
+    font-size: 300%;
+    margin-top: 2%;
+
+}
+
+#main, .sub-section, footer {
+    font-family: Arial;
+    margin-bottom: 10%;
+}
+
+.sub-section {
+    font-style: italic;
+}
+
+div#social-media-links{
+    margin-right: 5.1%;
+    text-align: right;
+}
+
+i.fab.fa-twitter-square.fa-2x {
+    color: #55ACEE;
+}
+
+i.fab.fa-facebook.fa-2x {
+    color: #3B5998;
+}
+
+i.fab.fa-instagram.fa-2x{
+    color:red;
+}
+
+a:hover i.fab.fa-twitter-square.fa-2x{
+    color:purple;
+}
+
+a:hover i.fab.fa-facebook.fa-2x{
+    color:lightblue;
+}
+
+a:hover i.fab.fa-instagram.fa-2x{
+    color:black;
+}
+
+@media screen and (min-width:992px) {
+    .hidden-on-desktop {
+        display: none;
+    }
+
+    h1 {
+        text-align: left;
+        margin-left: 1%;
+        margin-right: 40%;
+        font-size: 300%;
+        float: left;
+    }
+
+    nav>ul>li {
+        display: inline-block;
+        padding: 0;
+        background: none;
+        /*float: left;*/
+    }
+
+    img{
+        margin: 0 1.5%;
+        width: 95%;
+    }
+
+    #main {
+        width: 60%;
+        float: left;
+        margin-left: 1%;
+
+
+    }
+
+    .sub-section {
+        width: 25%;
+        float: left;
+        margin-left: 7%;
+    }
+
+    footer {
+        clear: both;
+        margin-left: 2%;
+    }
+
+}
