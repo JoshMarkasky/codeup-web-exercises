@@ -44,3 +44,8 @@ body {
     width: 12.5%;
     padding: 0 10px;
 }
+
+.two-thirds{
+    float: left;
+    width: 66.666%;
+}

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- title -->
+    <title></title>
+
+    <!-- bootstrap links -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Css Links-->
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+
+    <!-- font awesome link -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <!-- navbar -->
+    <div class="navbar navbar-light bg-light navbar-expand-bg navbar-sticky-top">
+        <div class="d-flex flex-row">
+            <div class="navbar-item p-2"><a href="#">Pizza World</a></div>
+            <div class="navbar-item p-2"><a href="">Order Online</a></div>
+            <div class="navbar-item p-2"><a href="#">Menu</a></div>
+            <div class="navbar-item p-2 input-groups input-groups-sm">
+                <input type="text" placeholder="Zip Code">
+            </div>
+            <div class="navbar-item p-2">
+                <button type="button" class="btn btn-outline-secondary btn-sm">Search stores near you</button>
+            </div>
+        </div>
+        <div class="nav-link ml-auto">
+            <a href="#"><i class="fas fa-user">Sign Up</i></a>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- image h1 header -->
+        <div class="jumbotron" id="jumbotron">
+            <h1>Welcome to Pizza World!!!</h1>
+        </div>
+
+        <!-- start of tabs -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><span class="badge badge-light">1: </span>Size and Crust</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><span class="badge badge-light">2: </span>Cheese and Sauce</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><span class="badge badge-light">3: </span>Toppings</a>
+            </li>
+        </ul>
+
+        <!-- card one -->
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="card" style="width: 100%;">
+                    <h4 id="size" >Size and Crust</h4>
+                    <!-- inner card 1 -->
+                    <div class="card-body">
+                        <div class="card" style="width: 100%;">
+                             <h4 id="hand">Hand Tossed</h4>
+                                <h5>garlic seasoned crust with a rich, buttery taste</h5>
+                                <form method="post" action="">
+                                    <hr>
+                                    <input id="small" name="size" type="radio">
+                                    <label for="small">small(10")</label><br>
+                                    <hr>
+                                    <input id="large" name="size" type="radio">
+                                    <label for="large">large(12")</label>
+                                </form>
+                        </div>
+                    </div> <!-- end of inner card 1-->
+
+                    <!-- inner card2 -->
+                    <div class="card-body">
+                        <div class="card" style="width: 100%;">
+                            <h4>Crispy Thin</h4>
+                            <h5>Thin enough for optimum crispy to crunchy ratio</h5>
+                            <form method="post" action="">
+                                <hr>
+                                <input name="size" type="radio">
+                                <label for="small">Medium(12")</label><br>
+                                <hr>
+                                <input name="size" type="radio">
+                                <label for="large">large(14")</label>
+                            </form>
+                        </div>
+                    </div> <!-- end of inner card 2 -->
+
+                    <!-- card 1 button -->
+                    <div id="nextStep" class="card-text">
+                        <button type="button" class="btn btn-primary bg-primary float-right">Next Step</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- card two -->
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="card" style="width: 100%;">
+                    <h4 id="cheese">choose cheese & sauce</h4>
+
+                    <!-- inner card 1 -->
+                    <div class="card-body">
+                        <div class="card" style="width: 100%;">
+                            <h4>Cheese</h4>
+                            <form method="post" action="">
+                                <div id="cheeseform">
+                                    <label for="select">how much?</label><br>
+                                    <select id="select" name="cheese">
+                                        <option value="light">light</option>
+                                        <option value="medium">medium</option>
+                                        <option value="extra">extra</option>
+                                    </select><br>
+                                </div>
+                            </form>
+                        </div>
+                    </div> <!-- end of inner card 1-->
+
+                    <!-- inner card2 -->
+                    <div class="card-body">
+                        <div class="card" style="width: 100%;">
+                            <h4>Sauce</h4>
+                            <form method="post" action="">
+                                <div id="sauceform">
+                                    <label for="saucetype">what type?</label><br>
+                                    <select id="saucetype" name="cheese">
+                                        <option value="type1">type1</option>
+                                        <option value="type2">type2</option>
+                                        <option value="type3">type3</option>
+                                    </select>
+                                    <label for="saucechoice">what type?</label><br>
+                                    <select id="saucechoice" name="cheese">
+                                        <option value="light">light</option>
+                                        <option value="medium">medium</option>
+                                        <option value="extra">extra</option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                    </div> <!-- end of inner card 2 -->
+
+                    <!-- card2 buttons -->
+                    <div id="nextStep2"class="card-text">
+                        <button type="button" class="btn btn-primary bg-primary float-right">Next Step</button>
+                        <button type="button" class="btn btn-primary bg-primary float-right">previous step</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- card three -->
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                <div class="card" style="width: 100%;">
+                    <h4 id="choosetop">Choose toppings</h4>
+
+                    <!-- inner card 1 -->
+                    <div class="card-body">
+                        <div class="card" style="width: 100%;">
+                            <h4>Choose Meats</h4>
+                            <form method="post" action="">
+                                <div id="meatform">
+                                    <form>
+                                        <input type="checkbox" id="name" name="beef">
+                                        <label for="name">Beef</label><br>
+                                        <input type="checkbox" id="Ham" name="ham">
+                                        <label for="Ham">Ham</label><br>
+                                        <input type="checkbox" id="Philly" name="beef">
+                                        <label for="Philly">Philly Steak</label><br>
+                                        <input type="checkbox" id="bacon" name="beef">
+                                        <label for="bacon">bacon</label><br>
+                                    </form>
+                                </div>
+                            </form>
+                        </div>
+                    </div> <!-- end of inner card 1-->
+
+                    <!-- inner card2 -->
+                    <div class="card-body">
+                        <div class="card" style="width: 100%;">
+                            <h4>Choose none meats</h4>
+                            <form method="post" action="">
+                                <div id="noneform">
+                                    <form>
+                                        <input type="checkbox" id="green" name="green">
+                                        <label for="green">Green Peppers</label><br>
+                                        <input type="checkbox" id="mush" name="mush">
+                                        <label for="mush">Mushrooms</label><br>
+                                        <input type="checkbox" id="onions" name="onions">
+                                        <label for="onions">Onions</label><br>
+                                        <input type="checkbox" id="Jalp" name="Jalp">
+                                        <label for="Jalp">Jalapeno Peppers</label><br>
+                                    </form>
+                                </div>
+                            </form>
+                        </div>
+                    </div> <!-- end of inner card 2 -->
+
+                    <!-- card2 buttons -->
+                    <div id="nextStep3"class="card-text">
+                        <button type="button" class="btn btn-primary bg-primary float-right">Check out<i class="fas fa-shopping-cart"></i></button>
+                    </div>
+
+                </div>
+            </div> <!-- end of tab 3 -->
+
+        </div> <!-- end of nav tabs -->
+
+        <br><br><br>
+
+    </div> <!-- end of container -->
+
+
+
+<!-- bootstrap scripts -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

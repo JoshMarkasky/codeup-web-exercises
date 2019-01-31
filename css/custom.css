@@ -1,0 +1,194 @@
+/* ------------ tags Css */
+h1{
+    text-align: center;
+    background-color: white;
+    width: 112%;
+    margin-left: -31px;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    padding-right: 145px;
+}
+
+h3 {
+    background-color: lightgrey;
+}
+h4 {
+    background-color: lightgrey;
+    height: 2em;
+    padding: 10px;
+    margin-bottom: 0;
+}
+
+a {
+    color: black;
+}
+
+a:hover{
+    text-decoration: none;
+    background-color: darkgray;
+    color: black;
+    padding: 20px;
+}
+
+form input{
+    height: 1em;
+}
+
+form {
+    background-color: lightblue;
+}
+
+/* list tags to classes */
+li.nav-item a:link:active {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+}
+
+ul.nav.navbar-tab {
+    font-size: 15px;
+}
+
+hr {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+input {
+    background-color: lightgrey;
+}
+
+/* -------------------------------Classes Css */
+.jumbotron {
+    background-image: url("../img/pizza.png");
+}
+
+.nav-tabs{
+    border-bottom: 0px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    font-size: 10px;
+}
+
+/* card 2 inner card 2*/
+button.btn.btn-primary.bg-primary.float-right {
+    margin: 3px;
+}
+
+
+/* ---------------------------------------------------id tags */
+/* card 1 outer card tags */
+#size {
+    background-color: blue;
+    height: 2em;
+    padding:10px;
+}
+#nextStep{
+    background-color: lightgrey;
+    height: 3em;
+    padding: 3px;
+    color:blue;
+}
+
+/* card 1 inner card tags */
+#hand {
+    background-color: lightgrey;
+    height: 2em;
+    padding: 10px;
+}
+
+#crust {
+    background-color: lightgrey;
+    padding: 10px;
+    height: 2em;
+}
+
+/* ---------------- card 2 outer  */
+/* navbar button */
+#nav-button{
+    background-color: grey;
+}
+
+/* inner card 1 */
+#cheese {
+    background-color: blue;
+    height: 2em;
+    padding:10px;
+}
+#select {
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+#cheeseform {
+    padding: 10px;
+    font-size: 25px;
+}
+
+/* 2nd inner card */
+select#saucetype {
+    width: 100%;
+}
+
+#nextStep2 {
+    background-color: lightgrey;
+    height: 3em;
+    padding: 3px;
+    color:blue;
+}
+
+#sauceform {
+    padding: 10px;
+    font-size: 25px;
+    width: 100%;
+}
+
+select#saucechoice{
+    width: 100%;
+}
+
+select#cheesechoice {
+    width: 100%;
+}
+
+/* card 3 inner card 1 */
+#choosetop {
+    background-color: blue;
+}
+
+#select2 {
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+#meatform {
+    padding: 10px;
+    font-size: 25px;
+}
+
+#noneform {
+    padding: 10px;
+    font-size: 25px;
+    width: 100%;
+}
+
+#nonetype {
+    width: 100%;
+}
+
+#nextStep3 {
+    background-color: lightgrey;
+    height: 3em;
+    padding: 3px;
+    color:blue;
+}
+
+
+
+
+
+
+
+
+
