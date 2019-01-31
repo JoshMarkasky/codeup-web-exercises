@@ -10,11 +10,11 @@
 
 img {
     margin-left: 3%;
-    width: 95%;
 }
 
 li {
     list-style: none;
+    display: inline-block;
     padding: 3%;
     background-color: lightgrey;
     margin: 3%;
@@ -101,11 +101,10 @@ a:hover i.fab.fa-instagram.fa-2x{
 
     img{
         margin: 0 1.5%;
-        width: 95%;
+
     }
 
     #main {
-        width: 60%;
         float: left;
         margin-left: 1%;
 
@@ -113,7 +112,7 @@ a:hover i.fab.fa-instagram.fa-2x{
     }
 
     .sub-section {
-        width: 25%;
+
         float: left;
         margin-left: 7%;
     }
