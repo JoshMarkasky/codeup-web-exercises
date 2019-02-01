@@ -25,9 +25,10 @@ a {
 
 a:hover{
     text-decoration: none;
-    background-color: darkgray;
     color: black;
+    background-color: darkgray;
     padding: 20px;
+    border-radius: 5px;
 }
 
 form input{
@@ -58,6 +59,12 @@ input {
     background-color: lightgrey;
 }
 
+/* card 2 inner card 2*/
+button.btn.btn-primary.bg-primary.float-right {
+    margin: 3px;
+}
+
+
 /* -------------------------------Classes Css */
 .jumbotron {
     background-image: url("../img/pizza.png");
@@ -70,12 +77,6 @@ input {
     border-top: 1px solid black;
     font-size: 10px;
 }
-
-/* card 2 inner card 2*/
-button.btn.btn-primary.bg-primary.float-right {
-    margin: 3px;
-}
-
 
 /* ---------------------------------------------------id tags */
 /* card 1 outer card tags */
@@ -131,6 +132,15 @@ select#saucetype {
     width: 100%;
 }
 
+select#saucechoice{
+    width: 100%;
+}
+
+select#cheesechoice {
+    width: 100%;
+}
+
+
 #nextStep2 {
     background-color: lightgrey;
     height: 3em;
@@ -141,14 +151,6 @@ select#saucetype {
 #sauceform {
     padding: 10px;
     font-size: 25px;
-    width: 100%;
-}
-
-select#saucechoice{
-    width: 100%;
-}
-
-select#cheesechoice {
     width: 100%;
 }
 

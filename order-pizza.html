@@ -22,27 +22,31 @@
 <body>
 
     <!-- navbar -->
-    <div class="navbar navbar-light bg-light navbar-expand-bg navbar-sticky-top">
-        <div class="d-flex flex-row">
-            <div class="navbar-item p-2"><a href="#">Pizza World</a></div>
-            <div class="navbar-item p-2"><a href="">Order Online</a></div>
-            <div class="navbar-item p-2"><a href="#">Menu</a></div>
-            <div class="navbar-item p-2 input-groups input-groups-sm">
-                <input type="text" placeholder="Zip Code">
-            </div>
-            <div class="navbar-item p-2">
-                <button type="button" class="btn btn-outline-secondary btn-sm">Search stores near you</button>
-            </div>
+    <div class="navbar navbar-light bg-light navbar-expand-bg">
+            <button class="navbar-toggler d-md-none d-lg-none " data-toggle="collapse" data-target="#navC">&#9776;</button>
+        <div id="navC" class="collapse d-md-block">
+            <ul class="nav navbar-pills">
+                <li class="navbar-item p-2 active"><a href="#">Pizza World</a></li>
+                <li class="navbar-item p-2"><a href="">Order Online</a></li>
+                <li class="navbar-item p-2"><a href="#">Menu</a></li>
+            </ul>
         </div>
+        <div class="navbar-item p-2 input-groups input-groups-sm">
+            <input type="text" placeholder="Zip Code">
+        </div>
+        <div class="navbar-item p-2">
+            <button type="button" class="btn btn-outline-secondary btn-sm">Search stores near you</button>
+        </div>
+
         <div class="nav-link ml-auto">
             <a href="#"><i class="fas fa-user">Sign Up</i></a>
         </div>
-    </div>
+    </div><br>
 
     <div class="container">
 
         <!-- image h1 header -->
-        <div class="jumbotron" id="jumbotron">
+        <div class="jumbotron d-none d-sm-block d-sm-none d-md-block" id="jumbotron">
             <h1>Welcome to Pizza World!!!</h1>
         </div>
 
