@@ -32,7 +32,7 @@
     }
 
     function isOdd(number){
-        if(number%2 == 0){
+        if(number%2 === 0){
             console.log('number is even');
         } else {
             console.log('number is odd');
@@ -100,7 +100,7 @@ function analyzeColor(random){
     }
 }
 
-function analyzeColorSwitch(random){
+function analyzeColorSwitch(){
     switch(randomColor){
         case 'red':
             console.log('this color is red');
@@ -200,7 +200,7 @@ console.log(analyzeColor(choice));
             var after = (price - (price * discount));
             alert('your lucky number is: ' + number + ' ' + 'your price was ' + price + ' ' + 'now is ' + after);
         } else {
-            alert('you get no dicount loser, full price!!');
+            alert('you get no discount loser, full price!!');
         }
     }
 
