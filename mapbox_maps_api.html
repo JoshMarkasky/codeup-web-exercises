@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- title -->
+        <title></title>
+
+        <!-- Link -->
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+
+        <style>
+            #map {
+                /* the width and height may be set to any size */
+                width: 100%;
+                height: 700px;
+            }
+        </style>
+
+    </head>
+    <body>
+
+    <div id='map'></div>
+
+    <!-- src -->
+    <script src="js/keys.js"></script>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+
+        <script>
+
+            mapboxgl.accessToken = maps2;
+            var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v9',
+                zoom: 10,
+                center: [-98.4916, 29.4252]
+            });
+
+            var rest = [
+                {address: "152 E Pecan St #100, San Antonio, TX, 78205", name: "Restaurant Gwendolyn"},
+                {address: "233 E Houston St, San Antonio, TX, 78205", name: "The Palm San Antonio"},
+                {address: "1015 Navarro St, San Antonio, TX, 78205", name: "Ocho"},
+            ];
+
+
+            for(var i = 0; i < rest.length; i++){
+                geocode(rest[i].address, maps2).then(function (data) {
+                    var popup = new mapboxgl.Popup()
+                        .setText('Swag');
+                    var marker = new mapboxgl.Marker()
+                        .setLngLat(data).addTo(map).setPopup(popup);
+                })
+            }
+
+
+
+        </script>
+
+    </body>
+</html>
