@@ -10,15 +10,15 @@
 
     </head>
     <body>
-        <h1></h1>
-        <p></p>
+        <h1>Hello World</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam blanditiis illum labore odio omnis placeat, quaerat tempora tenetur totam voluptatibus?</p>
         <ul>
-            <li class="codeup"></li>
-            <li class="codeup"></li>
-            <li class="codeup"></li>
+            <li class="codeup">one</li>
+            <li class="codeup">two</li>
+            <li class="codeup">three</li>
         </ul>
-        <div id="divOne"></div>
-        <div id="divTwo"></div>
+        <div id="divOne">id One</div>
+        <div id="divTwo">id Two</div>
 
 
         <!-- bootstrap 4 scripts -->
@@ -30,21 +30,24 @@
             "use strict";
             $(document).ready(function() {
 
-                // adding text to elements
-                $('h1').text('Hello World!!');
-                $('p').text('TEST');
-                $('.codeup').text('Adding to classes');
-                $('#divOne').text('Adding to id 1');
-                $('#divTwo').text('Adding to id 2');
+                // h1 background click color
+                $('h1').click((function () {
+                  $(this).css('background', 'green');
+                }));
 
-                //alerts
-                alert($('#divOne').html());
-                alert($('#divTwo').html());
-                alert($('h1').html());
+                // P tags font size double click
+                $('p').dblclick(function () {
+                    $(this).css('font-size', '18px');
+                })
 
-                $('.codeup').css('border', '1px solid').css('font-size', '20px');
+                //hover li tags
+                $('li').hover(
+                    function () {
+                        $(this).css('color', 'red');},
+                    function () {
+                        $(this).css('color', 'black');}
+                )
 
-                $('#divTwo, .codeup, p').css('background-color', 'yellow');
 
             });
         </script>
