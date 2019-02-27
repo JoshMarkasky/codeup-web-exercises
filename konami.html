@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+<h1>Konami Code</h1>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script>
+
+    "use strict";
+    $(document).ready(function() {
+
+        var Konami = Konami || {};
+
+        Konami.key = '38384040373937396665';
+
+        Konami.onCode = function(callback) {
+            var input = '';
+            $(document).on("keydown", function(e) {
+                input += ("" + e.keyCode);
+                if (input === Konami.key) {
+                    if(typeof callback == 'undefined') {
+                        return alert("you have 47 lives");
+                    }
+                    else {
+                        return callback();
+                    }
+                }
+                if (!Konami.key.indexOf(input)) return;
+                input = ("" + e.keyCode);
+            });
+        }
+
+        Konami.offCode = function() {
+            $(document).off("keydown");
+        }
+
+        Konami.onCode();
+
+    });
+
+</script>
+</body>
+</html>
