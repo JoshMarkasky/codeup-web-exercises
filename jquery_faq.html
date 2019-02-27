@@ -1,0 +1,61 @@
+<!DOVTYPE html>
+<html lang="en">
+    <head>
+        <title>10 facts</title>
+
+        <style>
+            .invisible {
+                visibility: hidden;
+            }
+        </style>
+
+    </head>
+    <body>
+    <h2>Hello!!</h2>
+    <button id="show">Show facts</button>
+        <dl>
+            <dt>fact 1</dt>
+            <dd class="invisible">There were 35 national monuments and parks in the service when it was created in 1916. </dd>
+            <dt>fact 2</dt>
+            <dd class="invisible">Today, the Park Service has 140 national monuments and parks. </dd>
+            <dt>fact 3</dt>
+            <dd class="invisible">The biggest park is Wrangell-St. Elias National Park and Preserve in Alaska. </dd>
+            <dt>fact 4</dt>
+            <dd class="invisible">The smallest site is the Thaddeus Kosciuszko National Memorial in Philadelphia.</dd>
+            <dt>fact 5</dt>
+            <dd class="invisible">The Park Service’s annual budget is $2.6 billion.</dd>
+            <dt>fact 6</dt>
+            <dd class="invisible">More than 307 million people visited Park Service locations in 2015. </dd>
+            <dt>fact 7</dt>
+            <dd class="invisible">The Park Service has about 20,000 direct employees.</dd>
+            <dt>fact 8</dt>
+            <dd class="invisible">The highest point in the system is Denali (or Mount McKinley) at 20,320 feet.</dd>
+            <dt>fact 9</dt>
+            <dd class="invisible">The National Park Service just doesn’t run parks</dd>
+            <dt>fact 10</dt>
+            <dd class="invisible">There was a new National Monument for the big 100th anniversary in 2016.</dd>
+        </dl>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script>
+
+            $(document).ready(function () {
+
+                $('dt').click(
+                    function () {$('dt, dd').css('color', 'red');}
+                );
+
+                $('#show').click(function () {
+                   if($('.invisible').css('visibility') === 'hidden'){
+                        $('.invisible').css('visibility', 'visible');
+                   } else {
+                       $('.invisible').css('visibility', 'hidden');
+                   }
+                });
+
+            });
+
+        </script>
+
+    </body>
+</html>
