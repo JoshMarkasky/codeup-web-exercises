@@ -38,6 +38,7 @@
 
         <!-- Yellow Button -->
         <button type="button" id="turnY">turn yellow</button>
+        <button type="button" id="btn1">hide li tags</button>
 
         <!-- List one -->
         <ul>
@@ -66,7 +67,15 @@
             <li>Nordic and alpine skiing opportunities exist in the park, at Hurricane Ridge.</li>
         </ul>
 
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <!-- divs -->
+        <div id="divP">
+            <h1>Would you like to sign <span id="x">x</span> up for our newsletter?</h1>
+        </div>
+
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
         <script>
 
             $(document).ready(function () {
@@ -96,7 +105,16 @@
                 //turn h3 tags font color to blue
                 $('li').click(function () {
                     $('h3').css('color', 'blue');
-                })
+                });
+
+                //hide x
+                $('#x').click(function () {
+                    $('#divP').hide();
+                });
+
+                $('#btn1').click(function () {
+                   $('li').slideUp(3000);
+                });
 
             });
 
