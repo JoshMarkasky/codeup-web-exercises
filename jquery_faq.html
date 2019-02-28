@@ -1,4 +1,4 @@
-<!DOVTYPE html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <title>10 facts</title>
@@ -36,6 +36,36 @@
             <dd class="invisible">There was a new National Monument for the big 100th anniversary in 2016.</dd>
         </dl>
 
+        <!-- Yellow Button -->
+        <button type="button" id="turnY">turn yellow</button>
+
+        <!-- List one -->
+        <ul>
+            <li><h3>Zion</h3></li>
+            <li>Before it was a national park, Zion was a national monument, and it’s name wasn’t Zion</li>
+            <li>Zion is home to one of the greatest engineering feats of modern times</li>
+            <li>Zion is more than just slot canyons and amazing hikes -- it also protects archeological sites</li>
+            <li>Zion’s Angels Landing provides spectacular views, but it’s one of the world’s most dangerous</li>
+        </ul>
+
+        <!-- List two -->
+        <ul>
+            <li><h3>Wind Cave</h3></li>
+            <li>Wind Cave National Park covers a total area of 28,295 acres</li>
+            <li>The lowest elevation found in Wind Cave is 3,559 feet at Beaver Creek</li>
+            <li>The highest elevation found in Wind Cave is 5,013 feet at Rankin Ridge</li>
+            <li>Wind Cave National Park lies in the Mountain time zone</li>
+        </ul>
+
+        <!-- List three -->
+        <ul>
+            <li><h3>Olympic</h3></li>
+            <li>There are more than 650 archaeological sites in Olympic National Park</li>
+            <li>Approximately three million people visit the park each year</li>
+            <li>There are 60 glaciers in the park with names</li>
+            <li>Nordic and alpine skiing opportunities exist in the park, at Hurricane Ridge.</li>
+        </ul>
+
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script>
 
@@ -52,6 +82,21 @@
                        $('.invisible').css('visibility', 'hidden');
                    }
                 });
+
+                // turn last li yellow
+                $('#turnY').click(function () {
+                    $('ul li:last-child').css('background-color', 'yellow');
+                });
+
+                //turn lis bold
+                $('h3').click(function () {
+                    $('li').css('font-weight', 'bold');
+                });
+
+                //turn h3 tags font color to blue
+                $('li').click(function () {
+                    $('h3').css('color', 'blue');
+                })
 
             });
 
