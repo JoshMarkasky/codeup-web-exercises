@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <!-- Title -->
+        <title>Ajax2</title>
+
+        <!-- Meta tags -->
+        <meta charset="UTF-8">
+        <meta name="description" content="ajax Practice for code up">
+        <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+        <meta name="author" content="Josh Markaksy">
+
+        <!-- bootstrap links -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <style>
+
+            body{
+                margin: 0;
+                padding: 0;
+            }
+
+            #content {
+                width: 190%;
+                height: 200%;
+            }
+
+            #footer{
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                padding: 1rem;
+                background-color: #efefef;
+                text-align: center;
+            }
+
+            .navbar {
+                background-color: white;
+                border-bottom: 1px solid black;
+                margin: 0;
+                padding: 0;
+            }
+
+            .header1{
+                text-decoration: underline;
+            }
+
+            .mainfooter{
+                background-color: #E6ECF0;
+                border-top: 1px solid black ;
+            }
+
+        </style>
+
+    </head>
+    <body>
+
+        <nav class="navbar navbar-light bg-light expand-md">
+            <div class="container">
+                <div class="navbar-brand">Blogs</div>
+                <h4>47</h4>
+            </div>
+
+        </nav><br>
+
+        <!-- Container1 -->
+        <div class="container">
+            <div id="output"></div>
+            <hr>
+        </div>
+        <br><br>
+
+        <!-- Container2 -->
+        <div class="container">
+                <!-- form -->
+                <form id="form1">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label for="title">Title</label>
+                            <input id="title" placeholder="title">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="date">Date</label>
+                            <input id="date" placeholder="title">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="categories">categories</label>
+                            <input class="mr-2" id="categories" placeholder="title">
+                        </div>
+                    </div><br><br>
+                    <div class="row">
+                        <div class="col-5"></div>
+                        <div class="col-6">
+                            <label for="content">content</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-4">
+                            <textarea id="content" form="form1"></textarea>
+                            <input type="button" id="btnSubmit" value="submit">
+                        </div>
+                    </div>
+                </form>
+        </div>
+
+
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        <script>
+
+            // selecting id in document
+            document.getElementById('output').addEventListener('load', addto);
+
+            //function to get all post
+            function addto(){
+                var xhr = new XMLHttpRequest();
+
+                xhr.open('GET', './data/blog.json', true);
+
+                xhr.onload = function () {
+                    if(this.status == 200) {
+                        var data = JSON.parse(this.responseText);
+                        var output = '';
+
+                        for (var i in data) {
+                            output +=`
+                            <div class="row">
+                                <div class="col-sm-4 header1">Title: ${data[i].title} </div>
+                                <div class="col-sm-4 header1">Date: ${data[i].date} </div>
+                                <div class="col-sm-4 header1">Categories: ${data[i].categories} </div><br>
+                            </div>
+                            <div class="row">
+                                <div class="mx-auto">
+                                    ${data[i].content}
+                                </div>
+                            </div><br><br>
+                            `
+                        } // end of for loop
+
+                        document.getElementById('output').innerHTML = output;
+
+                    } else if(this.status == 404){
+                        console.log('not found');
+                    }
+
+                }; // end of onload
+
+                xhr.onerror = (err) => {
+                    console.log('Error: ' + err);
+                };
+
+                xhr.send();
+
+            } // end of addto function
+
+
+
+            //function to POST new blog
+            document.getElementById('btnSubmit').addEventListener('click', postInfo);
+            
+            function postInfo(e) {
+                e.preventDefault();
+                var title = document.getElementById('title').value;
+                var date = document.getElementById('date').value;
+                var cat = document.getElementById('categories').value;
+                var content = document.getElementById('content').value;
+
+                var xhr = new XMLHttpRequest();
+
+                xhr.open('POST', './data/blog.json', true);
+                xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+                xhr.onload = function () {
+                    if(this.status == 200){
+                        var data = JSON.parse(this.responseText);
+                        data.push({title: title, date: date, categories: cat, content: content});
+                        var output = '';
+
+                        for (var i in data) {
+                            output +=`
+                            <div class="row">
+                                <div class="col-sm-4 header1">Title: ${data[i].title} </div>
+                                <div class="col-sm-4 header1">Date: ${data[i].date} </div>
+                                <div class="col-sm-4 header1">Categories: ${data[i].categories} </div><br>
+                            </div>
+                            <div class="row">
+                                <div class="mx-auto">
+                                    ${data[i].content}
+                                </div>
+                            </div><br><br>
+                            `
+                        } // end of for loop
+                        document.getElementById('output').innerHTML = output;
+
+                    } else if(this.status == 404){
+                        console.log('not found');
+                    }
+                }; //end of onload
+
+                xhr.onerror = (err) => {
+                  console.log('Error: ' + err);
+                };
+                xhr.send();
+            } // end of function postInfo
+
+
+            //calling all function
+            addto();
+
+        </script>
+
+    </body>
+</html>
