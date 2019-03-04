@@ -79,21 +79,21 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <label for="title">Title</label>
-                            <input id="title" placeholder="title">
+                            <input id="title">
                         </div>
                         <div class="col-sm-4">
                             <label for="date">Date</label>
-                            <input id="date" placeholder="title">
+                            <input id="date">
                         </div>
                         <div class="col-sm-4">
                             <label for="categories">categories</label>
-                            <input class="mr-2" id="categories" placeholder="title">
+                            <input class="mr-2" id="categories">
                         </div>
                     </div><br><br>
                     <div class="row">
                         <div class="col-5"></div>
                         <div class="col-6">
-                            <label for="content">content</label>
+                            <label for="content"></label>
                         </div>
                     </div>
                     <div class="row">
@@ -114,22 +114,12 @@
 
         <script>
 
-            // selecting id in document
-            document.getElementById('output').addEventListener('load', addto);
+            // show all function
+            function show(data){
+                var output = '';
 
-            //function to get all post
-            function addto(){
-                var xhr = new XMLHttpRequest();
-
-                xhr.open('GET', './data/blog.json', true);
-
-                xhr.onload = function () {
-                    if(this.status == 200) {
-                        var data = JSON.parse(this.responseText);
-                        var output = '';
-
-                        for (var i in data) {
-                            output +=`
+                for (var i in data) {
+                    output +=`
                             <div class="row">
                                 <div class="col-sm-4 header1">Title: ${data[i].title} </div>
                                 <div class="col-sm-4 header1">Date: ${data[i].date} </div>
@@ -141,15 +131,22 @@
                                 </div>
                             </div><br><br>
                             `
-                        } // end of for loop
+                } // end of for loop
 
-                        document.getElementById('output').innerHTML = output;
+                document.getElementById('output').innerHTML = output;
 
-                    } else if(this.status == 404){
-                        console.log('not found');
-                    }
+            }
 
-                }; // end of onload
+            //function to get all post
+            function getAll(){
+                var xhr = new XMLHttpRequest();
+
+                xhr.open('GET', './data/blog.json', true);
+
+                xhr.onload = function () {
+                    var data = JSON.parse(this.responseText);
+                    show(data);
+                };
 
                 xhr.onerror = (err) => {
                     console.log('Error: ' + err);
@@ -159,59 +156,67 @@
 
             } // end of addto function
 
-
-
             //function to POST new blog
             document.getElementById('btnSubmit').addEventListener('click', postInfo);
-            
+
             function postInfo(e) {
                 e.preventDefault();
                 var title = document.getElementById('title').value;
                 var date = document.getElementById('date').value;
                 var cat = document.getElementById('categories').value;
                 var content = document.getElementById('content').value;
-
                 var xhr = new XMLHttpRequest();
-
                 xhr.open('POST', './data/blog.json', true);
-                xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-
+                xhr.setRequestHeader('Content-type', 'application/json');
                 xhr.onload = function () {
                     if(this.status == 200){
                         var data = JSON.parse(this.responseText);
                         data.push({title: title, date: date, categories: cat, content: content});
-                        var output = '';
-
-                        for (var i in data) {
-                            output +=`
-                            <div class="row">
-                                <div class="col-sm-4 header1">Title: ${data[i].title} </div>
-                                <div class="col-sm-4 header1">Date: ${data[i].date} </div>
-                                <div class="col-sm-4 header1">Categories: ${data[i].categories} </div><br>
-                            </div>
-                            <div class="row">
-                                <div class="mx-auto">
-                                    ${data[i].content}
-                                </div>
-                            </div><br><br>
-                            `
-                        } // end of for loop
-                        document.getElementById('output').innerHTML = output;
-
+                        show(data);
                     } else if(this.status == 404){
                         console.log('not found');
                     }
                 }; //end of onload
-
                 xhr.onerror = (err) => {
-                  console.log('Error: ' + err);
+                    console.log('Error: ' + err);
                 };
                 xhr.send();
             } // end of function postInfo
 
 
+            // trying to find better way to better way to POST to json file
+
+            // //function to POST new blog
+            // document.getElementById('btnSubmit').addEventListener('click', postInfo);
+            //
+            // function postInfo(e) {
+            //     e.preventDefault();
+            //     var title = document.getElementById('title').value;
+            //     var date = document.getElementById('date').value;
+            //     var cat = document.getElementById('categories').value;
+            //     var content = document.getElementById('content').value;
+            //
+            //     const xhr = new XMLHttpRequest();
+            //
+            //     xhr.open('POST', "./data/blog.json", true);
+            //     xhr.setRequestHeader("Content-type", "application/json");
+            //     xhr.onreadystatechange = function () {
+            //         if (xhr.readyState == 4 && xhr.status == 200) {
+            //             var json = JSON.parse(xhr.responseText);
+            //             console.log(json);
+            //         }
+            //     };
+            //
+            //     var data = JSON.stringify({title: title, date: date, categories: cat, content: content });
+            //
+            //     xhr.send(data);
+            //
+            // } // end of function postInfo
+
+
+
             //calling all function
-            addto();
+            getAll();
 
         </script>
 
